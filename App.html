@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dog Name Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* === Basic page styling === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7ff;
+      color: #222;
+    }
+
+    .app-wrapper {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      color: #2b4b9c;
+    }
+
+    p {
+      color: #444;
+    }
+
+    .generator-box {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .name-display {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1f2937;
+      min-height: 2.2rem;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 999px;
+      padding: 0.6rem 1.4rem;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .history-title {
+      margin-top: 1.75rem;
+      font-weight: 600;
+    }
+
+    .history-list {
+      margin-top: 0.5rem;
+      padding-left: 1.1rem;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-wrapper">
+    <h1>Dog Name Generator 🐶</h1>
+    <p>
+      Click the button to get a fun random dog name. This small web app was
+      created in collaboration with AI for my HTML/CSS assignment.
+    </p>
+
+    <div class="generator-box">
+      <button class="btn-primary" id="generateBtn">Generate Name</button>
+      <div class="name-display" id="nameDisplay"></div>
+      <p class="tagline" id="description"></p>
+    </div>
+
+    <h3 class="history-title">Names you’ve seen this session:</h3>
+    <ul class="history-list" id="historyList"></ul>
+
+    <a class="back-link" href="Fromscratch.html">← Back to My Dog Page</a>
+  </div>
+
+ <script>
+  // List of fun dog names + a short description for each
+  const dogNames = [
+    { name: "Mocha", desc: "Perfect for a sweet, zoomy pup." },
+    { name: "Waffles", desc: "Soft, golden, and a little bit silly." },
+    { name: "Pepper", desc: "Spicy personality, tiny body." },
+    { name: "Luna", desc: "For the dog that howls at the moon." },
+    { name: "Bear", desc: "Big fluff, bigger heart." },
+    { name: "Hazel", desc: "Cute and gentle with puppy eyes." },
+    { name: "Milo", desc: "Always getting into everything." },
+    { name: "Nala", desc: "A little queen of the house." },
+    { name: "Rex", desc: "The self-appointed guardian of the yard." },
+    { name: "Poppy", desc: "Bouncy, bright, and full of energy." },
+    { name: "Oreo", desc: "Black, white, and absolutely sweet." },
+    { name: "Pumpkin", desc: "Especially cozy in the fall." }
+  ];
+
+  const generateBtn = document.getElementById("generateBtn");
+  const nameDisplay = document.getElementById("nameDisplay");
+  const description = document.getElementById("description");
+  const historyList = document.getElementById("historyList");
+
+  let history = [];
+
+  function generateName() {
+    // pick a random index from 0 to dogNames.length - 1
+    const randomIndex = Math.floor(Math.random() * dogNames.length);
+    const choice = dogNames[randomIndex];
+
+    nameDisplay.textContent = choice.name;
+    description.textContent = choice.desc;
+
+    // add to history, newest at top
+    history.unshift(choice.name);
+    if (history.length > 8) {
+      history.pop();
+    }
+
+    renderHistory();
+  }
+
+  function renderHistory() {
+    historyList.innerHTML = "";
+    history.forEach((name) => {
+      const li = document.createElement("li");
+      li.textContent = name;
+      historyList.appendChild(li);
+    });
+  }
+
+  generateBtn.addEventListener("click", generateName);
+</script>
+
+</body>
+</html>

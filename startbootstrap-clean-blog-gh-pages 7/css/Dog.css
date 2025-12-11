@@ -1,0 +1,185 @@
+/* Global page styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* font family */
+    background-color: #c0d0be; /* custom background color */
+    color: #1a1a1a; /* default font color */
+}
+
+.page-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    
+}
+
+/* Header */
+.site-header {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.site-header h1 {
+    margin-bottom: 0.25rem;
+    color: #ffffff; /* font color style */
+}
+
+.tagline {
+    margin-top: 0;
+    color: #222326;
+}
+
+/* Top nav */
+.top-nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.75rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.top-nav li {
+    margin: 0;
+}
+
+.top-nav a {
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    color: #f44ce0;
+    font-weight: 500;
+    border: 1px solid #555d6a;
+    background-color: #ffffff;
+}
+
+.top-nav a:hover {
+    background-color: #d6f0c6;
+}
+
+/* Card-style sections */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Layout row for intro section */
+.info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.text-block {
+    flex: 2;
+    min-width: 220px;
+}
+
+.image-wrapper {
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-caption {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.35rem;
+}
+
+/* Lists */
+ol {
+    padding-left: 1.3rem;
+}
+
+ul {
+    padding-left: 1.3rem;
+}
+
+/* YouTube video */
+.video-wrapper {
+    margin-top: 0.75rem;
+    max-width: 560px;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Tableau container */
+
+.tableau-container iframe {
+    width: 200 !important;
+    max-width: 1200px; /* set a bigger max width */
+    height: 650
+    
+}
+.tableau-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.tableau-placeholder {
+    font-style: italic;
+    color: #6b6f8b;
+    text-align: center;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: #555d6a;
+}
+
+.site-footer a {
+    color: #f44ce0;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+    .page-wrapper {
+        padding: 0.75rem;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.app-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.app-button {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  background-color: #222326;
+  color: #ffffff;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.app-button:hover {
+  background-color: #f44ce0;
+}
+
